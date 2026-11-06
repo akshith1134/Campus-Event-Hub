@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Event Hub - Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f5fc;
+      font-family: Arial, sans-serif;
+    }
+
+    .admin-card {
+      width: 100%;
+      max-width: 460px;
+      padding: 35px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(30,50,100,.1);
+      box-sizing: border-box;
+    }
+
+    h2, .subtitle { text-align: center; }
+
+    label {
+      display: block;
+      margin: 16px 0 7px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d5deef;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: #3157d5;
+      color: white;
+      border: 0;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .secondary {
+      background: #edf1fa;
+      color: #3157d5;
+    }
+
+    .hidden { display: none; }
+
+    #message {
+      text-align: center;
+      margin-top: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      color: #3157d5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="admin-card">
+    <h2 id="pageTitle">Admin Login</h2>
+    <p class="subtitle">Campus Event Hub</p>
+
+    <!-- Login form -->
+    <form id="adminLoginForm">
+      <label>Email</label>
+      <input name="email" type="email" required placeholder="Admin email">
+
+      <label>Password</label>
+      <input name="password" type="password" required placeholder="Password">
+
+      <button type="submit" id="loginButton">Login as Admin</button>
+    </form>
+
+    <!-- Create admin form -->
+    <form id="adminRegisterForm" class="hidden">
+      <label>Full Name</label>
+      <input name="name" required placeholder="Admin name">
+
+      <label>Email</label>
+      <input name="email" type="email" required placeholder="Admin email">
+
+      <label>Password</label>
+      <input name="password" type="password" minlength="6" required placeholder="At least 6 characters">
+
+      <label>Admin Setup Key</label>
+      <input name="setupKey" type="password" required placeholder="Enter setup key">
+
+      <button type="submit" id="registerButton">Create Admin Account</button>
+    </form>
+
+    <button type="button" class="secondary" id="toggleButton">
+      Create Admin Account
+    </button>
+
+    <p id="message"></p>
+
+    <a href="/login.html" class="back-link">Back to Student Login</a>
+  </div>
+
+  <script src="admin-login.js"></script>
+</body>
+</html>

@@ -1,3 +1,84 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Campus Event Hub | Login</title><link rel="stylesheet" href="style.css"></head>
-<body class="auth-bg"><main class="auth-card"><div class="brand"><span class="brand-icon">E</span><div><h1>Campus Event Hub</h1><small>Discover campus life</small></div></div><div class="tabs"><button id="loginTab" class="active">Login</button><button id="registerTab">Create account</button></div>
-<form id="authForm"><div id="nameWrap" class="hidden"><label>Full name</label><input name="name" placeholder="Your name"></div><label>Email</label><input name="email" type="email" placeholder="you@college.edu" required><label>Password</label><input name="password" type="password" placeholder="At least 6 characters" required minlength="6"><button class="primary full" type="submit" id="authBtn">Login</button></form><p id="authMessage" class="message"></p><p class="hint">Create a student account to register for events.</p></main><script src="login.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Event Hub | Authentication</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .tabs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+        }
+
+        .tabs button {
+            padding: 12px 8px;
+            font-size: 15px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="auth-bg">
+
+<main class="auth-card">
+
+    <div class="brand">
+        <span class="brand-icon">E</span>
+        <div>
+            <h1>Campus Event Hub</h1>
+            <small>Discover campus life</small>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button type="button" id="loginTab" class="active">Student Login</button>
+        <button type="button" id="registerTab">Student Register</button>
+        <button type="button" id="adminTab">Admin Login</button>
+        <button type="button" id="adminRegisterTab">Create Admin</button>
+    </div>
+
+    <form id="authForm">
+
+        <div id="nameWrap" class="hidden">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter full name">
+        </div>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email"
+               placeholder="you@college.edu" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password"
+               placeholder="At least 6 characters" minlength="6" required>
+
+        <div id="setupKeyWrap" class="hidden">
+            <label for="setupKey">Admin Setup Key</label>
+            <input id="setupKey" name="setupKey" type="password"
+                   placeholder="Enter admin setup key">
+        </div>
+
+        <button class="primary full" type="submit" id="authBtn">
+            Student Login
+        </button>
+
+    </form>
+
+    <p id="authMessage" class="message"></p>
+
+    <p class="hint" id="authHint">
+        Login to discover and register for campus events.
+    </p>
+
+</main>
+
+<script src="login.js"></script>
+
+</body>
+</html>
